@@ -3,6 +3,7 @@ package com.lesson.spring.web.controller;
 import com.lesson.dto.BookInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.awt.print.Book;
@@ -20,8 +21,8 @@ import java.util.List;
 public class BookController {
 
     @RequestMapping(value = "/book", method = RequestMethod.GET)
-    public List<BookInfo> query(){
-
+    public List<BookInfo> query(@RequestParam(value = "name", defaultValue = "hello spring mvc") String bookName){
+        System.out.println(bookName);
         List<BookInfo> bookInfos = new ArrayList<>();
         bookInfos.add(new BookInfo());
         bookInfos.add(new BookInfo());
