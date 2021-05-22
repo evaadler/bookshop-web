@@ -21,7 +21,8 @@ import java.util.List;
 public class BookController {
 
     @RequestMapping(value = "/book", method = RequestMethod.GET)
-    public List<BookInfo> query(@RequestParam(value = "name", defaultValue = "hello spring mvc") String bookName){
+    public List<BookInfo> query(@RequestParam(value = "name", defaultValue = "hello spring mvc") String bookName,
+                                Long categoryId){
         System.out.println(bookName);
         List<BookInfo> bookInfos = new ArrayList<>();
         bookInfos.add(new BookInfo());
